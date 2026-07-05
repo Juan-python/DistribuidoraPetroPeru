@@ -29,27 +29,29 @@ public class PasarelaPago extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextPane1 = new javax.swing.JTextPane();
+        NumTarjeta = new javax.swing.JTextPane();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        ExpiracionDate = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        Cvv = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        TitularTarjeta = new javax.swing.JTextField();
         btnPagar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jScrollPane1.setViewportView(jTextPane1);
+        jScrollPane1.setViewportView(NumTarjeta);
 
         jLabel1.setText("Numero de tarjeta:");
 
         jLabel2.setText("Fecha de expiracion:");
 
+        ExpiracionDate.addActionListener(this::ExpiracionDateActionPerformed);
+
         jLabel3.setText("CVV");
 
-        jTextField2.addActionListener(this::jTextField2ActionPerformed);
+        Cvv.addActionListener(this::CvvActionPerformed);
 
         jLabel4.setText("TITULAR");
 
@@ -66,17 +68,17 @@ public class PasarelaPago extends javax.swing.JFrame {
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                             .addGap(66, 66, 66)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Cvv, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addGap(26, 26, 26))))
                         .addGroup(layout.createSequentialGroup()
                             .addGap(270, 270, 270)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(TitularTarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel1)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(ExpiracionDate, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel2)
                                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
@@ -97,12 +99,12 @@ public class PasarelaPago extends javax.swing.JFrame {
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Cvv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ExpiracionDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(52, 52, 52)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(TitularTarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42)
                 .addComponent(btnPagar)
                 .addContainerGap(77, Short.MAX_VALUE))
@@ -111,13 +113,41 @@ public class PasarelaPago extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void CvvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CvvActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_CvvActionPerformed
 
     private void btnPagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPagarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnPagarActionPerformed
+        String numeroTarjeta = NumTarjeta.getText().replaceAll("\\s|-", ""); // Quita espacios o guiones si los hay
+        String fechaExp = ExpiracionDate.getText().trim();
+        String cvvStr = Cvv.getText().trim();
+        String titular = TitularTarjeta.getText().trim();
+        
+        if (numeroTarjeta.isEmpty() || fechaExp.isEmpty() || cvvStr.isEmpty() || titular.isEmpty()){
+            javax.swing.JOptionPane.showMessageDialog(this,
+                    "por favor complete todos los espacios.",
+                    "Error: Complete todos los campos", 
+                    javax.swing.JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        if (validarAlgoritmoLuhn(numeroTarjeta)){
+            javax.swing.JOptionPane.showMessageDialog(this, "Pago realizado con exito", 
+            "Pago realizado",
+                javax.swing.JOptionPane.INFORMATION_MESSAGE
+            );
+        }else{
+            javax.swing.JOptionPane.showMessageDialog(this, "Tarjeta Invalida", 
+            "Error en el metodo de pago", 
+            javax.swing.JOptionPane.ERROR_MESSAGE);
+        }
+        
+        }
+    //GEN-LAST:event_btnPagarActionPerformed
+
+    private void ExpiracionDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExpiracionDateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ExpiracionDateActionPerformed
 
     /**
      * @param args the command line arguments
@@ -143,17 +173,41 @@ public class PasarelaPago extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new PasarelaPago().setVisible(true));
     }
+    private boolean validarAlgoritmoLuhn(String numeroTarjeta){
+        if (numeroTarjeta == null || numeroTarjeta.length()<13 || numeroTarjeta.length()>19){
+            return false;
+        }
+        int suma = 0;
+        boolean alternar = false;
+        
+        for(int i = numeroTarjeta.length() - 1; i >=0; i--){
+            char c = numeroTarjeta.charAt(i);
+            if(!Character.isDigit(c)){
+                return false;
+            }
+            int n = Character.getNumericValue(c);
+            if (alternar) {
+                n *= 2;
+                if (n > 9) {
+                    n -=9;
+                }
+            }
+            suma +=n;
+            alternar = !alternar;
+        }
+        return (suma %10 == 0);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField Cvv;
+    private javax.swing.JTextField ExpiracionDate;
+    private javax.swing.JTextPane NumTarjeta;
+    private javax.swing.JTextField TitularTarjeta;
     private javax.swing.JButton btnPagar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextPane jTextPane1;
     // End of variables declaration//GEN-END:variables
 }
