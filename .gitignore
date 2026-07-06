@@ -1,16 +1,4 @@
-# Carpetas de compilación e intermedias de NetBeans (Ant)
-**/build/
-**/dist/
-
+build/
+dist/
 nbproject/private/
-
-# Archivos de registro, temporales y del sistema
-*.log
-.mtj.tmp/
-.DS_Store
-Thumbs.db
-
-# Extensiones empaquetadas 
-*.jar
-*.war
-*.ear
+*.class
