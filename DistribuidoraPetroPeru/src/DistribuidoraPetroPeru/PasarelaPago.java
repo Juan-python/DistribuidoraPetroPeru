@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package distribuidorarepsol;
+package DistribuidoraPetroPeru;
 
 /**
  *
@@ -143,7 +143,7 @@ public class PasarelaPago extends javax.swing.JFrame {
         }
         
         }
-    //GEN-LAST:event_btnPagarActionPerformed
+//GEN-LAST:event_btnPagarActionPerformed
 
     private void ExpiracionDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExpiracionDateActionPerformed
         // TODO add your handling code here:

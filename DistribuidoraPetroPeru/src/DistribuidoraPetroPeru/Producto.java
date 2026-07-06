@@ -1,4 +1,4 @@
-package distribuidorarepsol;
+package DistribuidoraPetroPeru;
 
 public class Producto {
     private String tipoCombustible;

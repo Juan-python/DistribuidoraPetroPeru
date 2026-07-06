@@ -2,3 +2,5 @@ build/
 dist/
 nbproject/private/
 *.class
+/DistribuidoraRepsol/nbproject/private/
+/DistribuidoraPetroPeru/nbproject/private/
