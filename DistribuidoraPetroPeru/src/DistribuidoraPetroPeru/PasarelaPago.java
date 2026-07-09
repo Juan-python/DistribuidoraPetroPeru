@@ -4,19 +4,25 @@
  */
 package DistribuidoraPetroPeru;
 
+import java.util.List;
+
 /**
  *
  * @author HP
  */
+
 public class PasarelaPago extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(PasarelaPago.class.getName());
-
+    private Carrito pantallaCarrito;
+    private java.util.List<Producto> listaCarrito;
     /**
      * Creates new form PasarelaPago
      */
-    public PasarelaPago() {
+    public PasarelaPago(Carrito pantallaCarrito, Object listaCarrito) {
         initComponents();
+        this.pantallaCarrito = pantallaCarrito;
+        this.listaCarrito = (List<Producto>) listaCarrito;
     }
 
     /**
@@ -136,6 +142,8 @@ public class PasarelaPago extends javax.swing.JFrame {
             "Pago realizado",
                 javax.swing.JOptionPane.INFORMATION_MESSAGE
             );
+            pantallaCarrito.finCompra();
+            this.dispose();
         }else{
             javax.swing.JOptionPane.showMessageDialog(this, "Tarjeta Invalida", 
             "Error en el metodo de pago", 
@@ -171,7 +179,6 @@ public class PasarelaPago extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new PasarelaPago().setVisible(true));
     }
     private boolean validarAlgoritmoLuhn(String numeroTarjeta){
         if (numeroTarjeta == null || numeroTarjeta.length()<13 || numeroTarjeta.length()>19){

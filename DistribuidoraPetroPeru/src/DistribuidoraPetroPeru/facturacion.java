@@ -81,6 +81,13 @@ public class facturacion extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenuInicio = new javax.swing.JMenu();
+        jMenuCarrito = new javax.swing.JMenu();
+        jMenuPrecios = new javax.swing.JMenu();
+        jMenuComprar = new javax.swing.JMenu();
+        jMenuEstado = new javax.swing.JMenu();
+        jMenuSalir = new javax.swing.JMenu();
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -203,6 +210,51 @@ public class facturacion extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jMenuInicio.setText("Inicio");
+        jMenuInicio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuInicioMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(jMenuInicio);
+
+        jMenuCarrito.setText("Carrito");
+        jMenuCarrito.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuCarritoMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(jMenuCarrito);
+
+        jMenuPrecios.setText("Precios");
+        jMenuPrecios.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuPreciosMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(jMenuPrecios);
+
+        jMenuComprar.setText("Comprar");
+        jMenuComprar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuComprarMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(jMenuComprar);
+
+        jMenuEstado.setText("Estado");
+        jMenuBar1.add(jMenuEstado);
+
+        jMenuSalir.setText("Salir");
+        jMenuSalir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuSalirMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(jMenuSalir);
+
+        setJMenuBar(jMenuBar1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -264,6 +316,40 @@ try {
         // TODO add your handling code here:
     }//GEN-LAST:event_cbdespachoActionPerformed
 
+    private void jMenuSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuSalirMouseClicked
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_jMenuSalirMouseClicked
+
+    private void jMenuInicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuInicioMouseClicked
+        // TODO add your handling code here:
+        Main inicio = new Main();
+        inicio.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jMenuInicioMouseClicked
+
+    private void jMenuCarritoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuCarritoMouseClicked
+        // TODO add your handling code here:
+        Carrito ct = new Carrito();
+        ct.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jMenuCarritoMouseClicked
+
+    private void jMenuPreciosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuPreciosMouseClicked
+        // TODO add your handling code here:
+        CombustiblePrecio precios = new CombustiblePrecio();
+        precios.setVisible(true);
+        this.setVisible(false);
+        
+    }//GEN-LAST:event_jMenuPreciosMouseClicked
+
+    private void jMenuComprarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuComprarMouseClicked
+        // TODO add your handling code here:
+        CombustiblePrecio precios = new CombustiblePrecio();
+        precios.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jMenuComprarMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -299,6 +385,13 @@ try {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenu jMenuCarrito;
+    private javax.swing.JMenu jMenuComprar;
+    private javax.swing.JMenu jMenuEstado;
+    private javax.swing.JMenu jMenuInicio;
+    private javax.swing.JMenu jMenuPrecios;
+    private javax.swing.JMenu jMenuSalir;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;

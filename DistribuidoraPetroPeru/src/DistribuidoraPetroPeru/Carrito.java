@@ -59,11 +59,27 @@ public class Carrito extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaCarrito = new javax.swing.JTable();
         btnQuitar = new javax.swing.JButton();
         btnConfirmar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
+        jMenuBar2 = new javax.swing.JMenuBar();
+        jMenuInicio = new javax.swing.JMenu();
+        jMenuPrecios = new javax.swing.JMenu();
+        jMenuEstado = new javax.swing.JMenu();
+        jMenuFacturacion = new javax.swing.JMenu();
+        jMenu3 = new javax.swing.JMenu();
+        jMenuSalir = new javax.swing.JMenu();
+
+        jMenu1.setText("File");
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Edit");
+        jMenuBar1.add(jMenu2);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -96,6 +112,56 @@ public class Carrito extends javax.swing.JFrame {
 
         btnCancelar.setText("Cancelar Pedido");
 
+        jMenuInicio.setText("Inicio");
+        jMenuInicio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuInicioMouseClicked(evt);
+            }
+        });
+        jMenuBar2.add(jMenuInicio);
+
+        jMenuPrecios.setText("Precios");
+        jMenuPrecios.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuPreciosMouseClicked(evt);
+            }
+        });
+        jMenuBar2.add(jMenuPrecios);
+
+        jMenuEstado.setText("Estado");
+        jMenuEstado.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuEstadoMouseClicked(evt);
+            }
+        });
+        jMenuBar2.add(jMenuEstado);
+
+        jMenuFacturacion.setText("Facturas");
+        jMenuFacturacion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuFacturacionMouseClicked(evt);
+            }
+        });
+        jMenuBar2.add(jMenuFacturacion);
+
+        jMenu3.setText("Comprar");
+        jMenu3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu3MouseClicked(evt);
+            }
+        });
+        jMenuBar2.add(jMenu3);
+
+        jMenuSalir.setText("Salir");
+        jMenuSalir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuSalirMouseClicked(evt);
+            }
+        });
+        jMenuBar2.add(jMenuSalir);
+
+        setJMenuBar(jMenuBar2);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -104,29 +170,34 @@ public class Carrito extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(155, 155, 155)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnQuitar)
-                                .addGap(35, 35, 35)
-                                .addComponent(btnConfirmar))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(244, 244, 244)
+                                .addGap(93, 93, 93)
+                                .addComponent(btnQuitar))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(131, 131, 131)
+                                .addComponent(btnConfirmar))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(455, 455, 455)
                         .addComponent(btnCancelar)))
-                .addContainerGap(345, Short.MAX_VALUE))
+                .addContainerGap(116, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnQuitar)
-                    .addComponent(btnConfirmar))
-                .addGap(18, 18, 18)
-                .addComponent(btnCancelar)
-                .addGap(22, 22, 22))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(47, 47, 47)
+                        .addComponent(btnQuitar)
+                        .addGap(41, 41, 41)
+                        .addComponent(btnConfirmar)
+                        .addGap(53, 53, 53)
+                        .addComponent(btnCancelar))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         pack();
@@ -154,11 +225,48 @@ public class Carrito extends javax.swing.JFrame {
             javax.swing.JOptionPane.showMessageDialog(this, "El carrito está vacío.");
             return;
         }
-        javax.swing.JOptionPane.showMessageDialog(this, "Compra confirmada. Productos: " + listaCarrito.size());
-        listaCarrito.clear();
-        cargarTabla();
-        
+        PasarelaPago pantallaPago = new PasarelaPago(this, listaCarrito); 
+        pantallaPago.setVisible(true);
     }//GEN-LAST:event_btnConfirmarActionPerformed
+
+    private void jMenuSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuSalirMouseClicked
+        // TODO add your handling code here:
+        System.exit(0);
+        
+    }//GEN-LAST:event_jMenuSalirMouseClicked
+
+    private void jMenuInicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuInicioMouseClicked
+        // TODO add your handling code here:
+        Main inicio = new Main();
+        inicio.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jMenuInicioMouseClicked
+
+    private void jMenuPreciosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuPreciosMouseClicked
+        // TODO add your handling code here:
+        CombustiblePrecio precios = new CombustiblePrecio();
+        precios.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jMenuPreciosMouseClicked
+
+    private void jMenuEstadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuEstadoMouseClicked
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jMenuEstadoMouseClicked
+
+    private void jMenuFacturacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuFacturacionMouseClicked
+        // TODO add your handling code here:
+        facturacion fc = new facturacion();
+        fc.setVisible(true);
+        this.setVisible(false);        
+    }//GEN-LAST:event_jMenuFacturacionMouseClicked
+
+    private void jMenu3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu3MouseClicked
+        // TODO add your handling code here:
+        PantallaDePedido compras = new PantallaDePedido();
+        compras.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jMenu3MouseClicked
 
     //----------->  se agrego BOTON CONFIRMAR   <-------- 
     
@@ -208,7 +316,22 @@ public class Carrito extends javax.swing.JFrame {
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnConfirmar;
     private javax.swing.JButton btnQuitar;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JMenu jMenuEstado;
+    private javax.swing.JMenu jMenuFacturacion;
+    private javax.swing.JMenu jMenuInicio;
+    private javax.swing.JMenu jMenuPrecios;
+    private javax.swing.JMenu jMenuSalir;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tablaCarrito;
     // End of variables declaration//GEN-END:variables
+public void finCompra(){
+    javax.swing.JOptionPane.showMessageDialog(this, "Compra realizada");
+    listaCarrito.clear();
+    cargarTabla();
+}
 }

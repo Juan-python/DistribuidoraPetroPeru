@@ -4,6 +4,8 @@
  */
 package DistribuidoraPetroPeru;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author HP
@@ -47,6 +49,7 @@ public class Login extends javax.swing.JFrame {
         btnIngreso.addActionListener(this::btnIngresoActionPerformed);
 
         btnSalir.setText("Salir");
+        btnSalir.addActionListener(this::btnSalirActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -95,9 +98,19 @@ public class Login extends javax.swing.JFrame {
         String user, pwd;
         user=txtUsuario.getText();
         pwd=txtPassword.getText();
-        if(user.equals("20845391264")&& pwd.equals("Contr4sen4segura!")){
+        if(user.equals("20845391264")&& pwd.equals("1234!")){
+            Main principal = new Main();
+            principal.setVisible(true);
+            this.setVisible(false);
+        }else{
+            JOptionPane.showMessageDialog(null, "Datos incorrectos");
         }
     }//GEN-LAST:event_btnIngresoActionPerformed
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_btnSalirActionPerformed
 
     /**
      * @param args the command line arguments

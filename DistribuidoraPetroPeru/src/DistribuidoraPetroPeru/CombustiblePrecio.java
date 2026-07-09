@@ -22,6 +22,12 @@ public class CombustiblePrecio extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenuInicio = new javax.swing.JMenu();
+        jMenuCarrito = new javax.swing.JMenu();
+        jMenuEstado = new javax.swing.JMenu();
+        jMenuFacturacion = new javax.swing.JMenu();
+        jMenuSalir = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -43,6 +49,48 @@ public class CombustiblePrecio extends javax.swing.JFrame {
             jTable1.getColumnModel().getColumn(4).setResizable(false);
         }
 
+        jMenuInicio.setText("Inicio");
+        jMenuInicio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuInicioMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(jMenuInicio);
+
+        jMenuCarrito.setText("Carrito");
+        jMenuCarrito.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuCarritoMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(jMenuCarrito);
+
+        jMenuEstado.setText("Estado");
+        jMenuEstado.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuEstadoMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(jMenuEstado);
+
+        jMenuFacturacion.setText("Facturacion");
+        jMenuFacturacion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuFacturacionMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(jMenuFacturacion);
+
+        jMenuSalir.setText("Salir");
+        jMenuSalir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuSalirMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(jMenuSalir);
+
+        setJMenuBar(jMenuBar1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -63,11 +111,42 @@ public class CombustiblePrecio extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(111, Short.MAX_VALUE))
+                .addContainerGap(88, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jMenuSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuSalirMouseClicked
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_jMenuSalirMouseClicked
+
+    private void jMenuInicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuInicioMouseClicked
+        // TODO add your handling code here:
+        Main inicio = new Main();
+        inicio.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jMenuInicioMouseClicked
+
+    private void jMenuCarritoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuCarritoMouseClicked
+        // TODO add your handling code here:
+        Carrito ct = new Carrito();
+        ct.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jMenuCarritoMouseClicked
+
+    private void jMenuEstadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuEstadoMouseClicked
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jMenuEstadoMouseClicked
+
+    private void jMenuFacturacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuFacturacionMouseClicked
+        // TODO add your handling code here:
+        facturacion fc = new facturacion();
+        fc.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jMenuFacturacionMouseClicked
 
     /**
      * @param args the command line arguments
@@ -96,7 +175,13 @@ public class CombustiblePrecio extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenu jMenuCarrito;
+    private javax.swing.JMenu jMenuEstado;
+    private javax.swing.JMenu jMenuFacturacion;
+    private javax.swing.JMenu jMenuInicio;
+    private javax.swing.JMenu jMenuSalir;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
-}
+       }

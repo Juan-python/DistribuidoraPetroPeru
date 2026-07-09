@@ -43,6 +43,12 @@ public class PantallaDePedido extends javax.swing.JFrame {
         btnMostrarPrecio = new javax.swing.JButton();
         lblPrecioTotal = new javax.swing.JLabel();
         btnAgregarCarrito = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenuInicio = new javax.swing.JMenu();
+        jMenuPrecios = new javax.swing.JMenu();
+        jMenuCarrito = new javax.swing.JMenu();
+        jMenuFacturas = new javax.swing.JMenu();
+        jMenuSalir = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -73,6 +79,43 @@ public class PantallaDePedido extends javax.swing.JFrame {
                 btnAgregarCarritoActionPerformed(evt);
             }
         });
+
+        jMenuInicio.setText("inicio");
+        jMenuInicio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuInicioMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(jMenuInicio);
+
+        jMenuPrecios.setText("precios");
+        jMenuPrecios.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuPreciosMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(jMenuPrecios);
+
+        jMenuCarrito.setText("carrito");
+        jMenuCarrito.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuCarritoMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(jMenuCarrito);
+
+        jMenuFacturas.setText("facturas");
+        jMenuBar1.add(jMenuFacturas);
+
+        jMenuSalir.setText("salir");
+        jMenuSalir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuSalirMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(jMenuSalir);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -113,7 +156,7 @@ public class PantallaDePedido extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnMostrarPrecio)
                     .addComponent(lblPrecioTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addComponent(btnAgregarCarrito)
                 .addGap(58, 58, 58))
         );
@@ -165,6 +208,32 @@ public class PantallaDePedido extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnAgregarCarritoActionPerformed
 
+    private void jMenuSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuSalirMouseClicked
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_jMenuSalirMouseClicked
+
+    private void jMenuCarritoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuCarritoMouseClicked
+        // TODO add your handling code here:
+        Carrito ct = new Carrito();
+        ct.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jMenuCarritoMouseClicked
+
+    private void jMenuPreciosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuPreciosMouseClicked
+        // TODO add your handling code here:
+        CombustiblePrecio precios = new CombustiblePrecio();
+        precios.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jMenuPreciosMouseClicked
+
+    private void jMenuInicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuInicioMouseClicked
+        // TODO add your handling code here:
+        Main inicio = new Main();
+        inicio.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jMenuInicioMouseClicked
+
     
     //AGREGAR EL CARRITO
     
@@ -214,6 +283,12 @@ public class PantallaDePedido extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbxTipo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenu jMenuCarrito;
+    private javax.swing.JMenu jMenuFacturas;
+    private javax.swing.JMenu jMenuInicio;
+    private javax.swing.JMenu jMenuPrecios;
+    private javax.swing.JMenu jMenuSalir;
     private javax.swing.JLabel lblPrecioTotal;
     private javax.swing.JTextField txtCantidad;
     // End of variables declaration//GEN-END:variables
