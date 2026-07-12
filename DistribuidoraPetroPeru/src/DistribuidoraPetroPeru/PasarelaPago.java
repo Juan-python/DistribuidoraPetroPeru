@@ -23,6 +23,8 @@ public class PasarelaPago extends javax.swing.JFrame {
         initComponents();
         this.pantallaCarrito = pantallaCarrito;
         this.listaCarrito = (List<Producto>) listaCarrito;
+        setLocationRelativeTo(null);
+        setTitle("Porfavor rellene todos los campos");
     }
 
     /**

@@ -15,6 +15,8 @@ public class PantallaDePedido extends javax.swing.JFrame {
      */
     public PantallaDePedido() {
         initComponents();
+        setLocationRelativeTo(null);
+        setTitle("Realice su compra");
     }
     
     private java.util.Map<String, Double> precios = new java.util.LinkedHashMap<>();
@@ -52,6 +54,7 @@ public class PantallaDePedido extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        cbxTipo.setBackground(new java.awt.Color(0, 0, 204));
         cbxTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "GNV", "GLP" }));
 
         jLabel1.setText("Seleccione un tipo:");
@@ -64,6 +67,7 @@ public class PantallaDePedido extends javax.swing.JFrame {
 
         jLabel2.setText("Cantidad en galones");
 
+        btnMostrarPrecio.setBackground(new java.awt.Color(0, 204, 0));
         btnMostrarPrecio.setText("Mostrar precio");
         btnMostrarPrecio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -73,6 +77,7 @@ public class PantallaDePedido extends javax.swing.JFrame {
 
         lblPrecioTotal.setText("S/ 0.00");
 
+        btnAgregarCarrito.setBackground(new java.awt.Color(51, 255, 51));
         btnAgregarCarrito.setText("Agregar al carrito");
         btnAgregarCarrito.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

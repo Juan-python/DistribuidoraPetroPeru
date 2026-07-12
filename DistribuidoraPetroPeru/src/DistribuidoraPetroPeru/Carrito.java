@@ -16,6 +16,8 @@ public class Carrito extends javax.swing.JFrame {
     public Carrito() {
     initComponents();
     cargarTabla();
+    setTitle("Carrito de comrpas");
+    setLocationRelativeTo(null);
     }
     private static java.util.List<Producto> listaCarrito = new java.util.ArrayList<>();
 
@@ -83,6 +85,7 @@ public class Carrito extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        tablaCarrito.setBackground(new java.awt.Color(247, 244, 243));
         tablaCarrito.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -96,6 +99,7 @@ public class Carrito extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tablaCarrito);
 
+        btnQuitar.setBackground(new java.awt.Color(242, 67, 51));
         btnQuitar.setText("Quitar seleccionado");
         btnQuitar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -110,7 +114,16 @@ public class Carrito extends javax.swing.JFrame {
             }
         });
 
+        btnCancelar.setBackground(new java.awt.Color(255, 120, 52));
         btnCancelar.setText("Cancelar Pedido");
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
+
+        jMenuBar2.setBackground(new java.awt.Color(197, 3, 55));
+        jMenuBar2.setForeground(new java.awt.Color(2, 6, 14));
 
         jMenuInicio.setText("Inicio");
         jMenuInicio.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -254,19 +267,23 @@ public class Carrito extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jMenuEstadoMouseClicked
 
-    private void jMenuFacturacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuFacturacionMouseClicked
-        // TODO add your handling code here:
-        facturacion fc = new facturacion();
-        fc.setVisible(true);
-        this.setVisible(false);        
-    }//GEN-LAST:event_jMenuFacturacionMouseClicked
-
     private void jMenu3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu3MouseClicked
         // TODO add your handling code here:
         PantallaDePedido compras = new PantallaDePedido();
         compras.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jMenu3MouseClicked
+
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void jMenuFacturacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuFacturacionMouseClicked
+        // TODO add your handling code here:
+        facturacion fc = new facturacion();
+        fc.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jMenuFacturacionMouseClicked
 
     //----------->  se agrego BOTON CONFIRMAR   <-------- 
     

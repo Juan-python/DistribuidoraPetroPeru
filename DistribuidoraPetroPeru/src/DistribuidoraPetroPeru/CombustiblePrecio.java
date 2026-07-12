@@ -8,6 +8,8 @@ public class CombustiblePrecio extends javax.swing.JFrame {
      */
     public CombustiblePrecio() {
         initComponents();
+        setLocationRelativeTo(null);
+        setTitle("Informacion de precios");
     }
 
     /**
