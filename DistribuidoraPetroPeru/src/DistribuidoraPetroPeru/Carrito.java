@@ -72,8 +72,6 @@ public class Carrito extends javax.swing.JFrame {
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenuInicio = new javax.swing.JMenu();
         jMenuPrecios = new javax.swing.JMenu();
-        jMenuEstado = new javax.swing.JMenu();
-        jMenuFacturacion = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
         jMenuSalir = new javax.swing.JMenu();
 
@@ -140,22 +138,6 @@ public class Carrito extends javax.swing.JFrame {
             }
         });
         jMenuBar2.add(jMenuPrecios);
-
-        jMenuEstado.setText("Estado");
-        jMenuEstado.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenuEstadoMouseClicked(evt);
-            }
-        });
-        jMenuBar2.add(jMenuEstado);
-
-        jMenuFacturacion.setText("Facturas");
-        jMenuFacturacion.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenuFacturacionMouseClicked(evt);
-            }
-        });
-        jMenuBar2.add(jMenuFacturacion);
 
         jMenu3.setText("Comprar");
         jMenu3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -240,6 +222,7 @@ public class Carrito extends javax.swing.JFrame {
         }
         PasarelaPago pantallaPago = new PasarelaPago(this, listaCarrito); 
         pantallaPago.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnConfirmarActionPerformed
 
     private void jMenuSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuSalirMouseClicked
@@ -262,11 +245,6 @@ public class Carrito extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jMenuPreciosMouseClicked
 
-    private void jMenuEstadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuEstadoMouseClicked
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_jMenuEstadoMouseClicked
-
     private void jMenu3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu3MouseClicked
         // TODO add your handling code here:
         PantallaDePedido compras = new PantallaDePedido();
@@ -277,13 +255,6 @@ public class Carrito extends javax.swing.JFrame {
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCancelarActionPerformed
-
-    private void jMenuFacturacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuFacturacionMouseClicked
-        // TODO add your handling code here:
-        facturacion fc = new facturacion();
-        fc.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_jMenuFacturacionMouseClicked
 
     //----------->  se agrego BOTON CONFIRMAR   <-------- 
     
@@ -338,17 +309,17 @@ public class Carrito extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuBar jMenuBar2;
-    private javax.swing.JMenu jMenuEstado;
-    private javax.swing.JMenu jMenuFacturacion;
     private javax.swing.JMenu jMenuInicio;
     private javax.swing.JMenu jMenuPrecios;
     private javax.swing.JMenu jMenuSalir;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tablaCarrito;
     // End of variables declaration//GEN-END:variables
-public void finCompra(){
+public void finCompra(String nombreTitular){
+    GestionPedidos.getInstance().registrarPedido(nombreTitular, listaCarrito);
     javax.swing.JOptionPane.showMessageDialog(this, "Compra realizada");
     listaCarrito.clear();
     cargarTabla();
+    this.dispose();
 }
 }

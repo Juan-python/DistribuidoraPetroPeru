@@ -28,11 +28,6 @@
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jMenuCarritoMouseClicked"/>
           </Events>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="jMenuFacturas">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="facturas"/>
-          </Properties>
-        </Menu>
         <Menu class="javax.swing.JMenu" name="jMenuSalir">
           <Properties>
             <Property name="text" type="java.lang.String" value="salir"/>

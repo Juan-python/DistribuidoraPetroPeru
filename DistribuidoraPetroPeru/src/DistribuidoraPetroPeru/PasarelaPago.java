@@ -144,7 +144,9 @@ public class PasarelaPago extends javax.swing.JFrame {
             "Pago realizado",
                 javax.swing.JOptionPane.INFORMATION_MESSAGE
             );
-            pantallaCarrito.finCompra();
+            pantallaCarrito.finCompra(titular);
+            facturacion ventanaFactura = new facturacion();
+            ventanaFactura.setVisible(true);
             this.dispose();
         }else{
             javax.swing.JOptionPane.showMessageDialog(this, "Tarjeta Invalida", 

@@ -49,7 +49,6 @@ public class PantallaDePedido extends javax.swing.JFrame {
         jMenuInicio = new javax.swing.JMenu();
         jMenuPrecios = new javax.swing.JMenu();
         jMenuCarrito = new javax.swing.JMenu();
-        jMenuFacturas = new javax.swing.JMenu();
         jMenuSalir = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -108,9 +107,6 @@ public class PantallaDePedido extends javax.swing.JFrame {
             }
         });
         jMenuBar1.add(jMenuCarrito);
-
-        jMenuFacturas.setText("facturas");
-        jMenuBar1.add(jMenuFacturas);
 
         jMenuSalir.setText("salir");
         jMenuSalir.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -290,7 +286,6 @@ public class PantallaDePedido extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu jMenuCarrito;
-    private javax.swing.JMenu jMenuFacturas;
     private javax.swing.JMenu jMenuInicio;
     private javax.swing.JMenu jMenuPrecios;
     private javax.swing.JMenu jMenuSalir;
